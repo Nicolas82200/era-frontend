@@ -56,7 +56,7 @@
  --L : 1.5rem
  --XL : 2rem
  --XXL: 4rem
- --button : 999px  (for button, badge, profil)
+ --button : 999px (for button, badge, profil)
  
 ## Typo by Era
 
