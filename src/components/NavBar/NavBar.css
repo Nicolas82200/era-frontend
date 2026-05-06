@@ -24,6 +24,10 @@
 	color: var(--color-neutral);
 }
 
+/* .navBar-text-B {
+	font-family: PROUT;
+} */
+
 /* Pour les ères */
 .navBar-button.before-prehistory {
 	background-color: var(--color-before-prehistory);
