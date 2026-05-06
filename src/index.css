@@ -43,6 +43,48 @@
 	--font-modern: "Modern", sans-serif;
 	--font-contemporary: "Contemporary", sans-serif;
 	--font-futur: "Futur", sans-serif;
+
+	/* Radius */
+
+	--XS: 0.5rem;
+	--S: 0.75rem;
+	--M: 1rem;
+	--L: 1.5rem;
+	--XL: 2rem;
+	--XXL: 4rem;
+
+	/* font-size */
+
+	/* Desktop */
+	--dh1: 3rem;
+	--dh2: 2rem;
+	--dh3: 1.75rem;
+	--dh4: 1.5rem;
+	--dh5: 1.25rem;
+	--dp: 1rem;
+
+	/* Tablet */
+	--th1: 2.5rem;
+	--th2: 1.75rem;
+	--th3: 1.5rem;
+	--th4: 1.25rem;
+	--th5: 1rem;
+	--tp: 0.875rem;
+
+	/* Mobile */
+	--mh1: 2.25rem;
+	--mh2: 1.5rem;
+	--mh3: 1.25rem;
+	--mh4: 1.125rem;
+	--mh5: 1rem;
+	--mp: 0.875rem;
+	/* Space (base 8) */
+	--space-XS: 0.5rem;
+	--space-S: 0.75rem;
+	--space-M: 1rem;
+	--space-L: 1.5rem;
+	--space-XL: 2rem;
+	--space-XXL: 4rem;
 }
 * {
 	padding: 0;

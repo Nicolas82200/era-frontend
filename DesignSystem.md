@@ -17,12 +17,12 @@
 	--font-futur: "Futur", sans-serif; 
 
  # Space (base 8)
- --XS : 0.5 rem
- --S : 1rem
- --M : 1.5rem
- --L : 2rem
- --XL : 3rem
- --XXL: 4rem
+	--space-XS: 0.5rem; (padding button)
+	--space-S: 0.75rem; (accordeon gap)
+	--space-M: 1rem;
+	--space-L: 1.5rem; (padding card)
+	--space-XL: 2rem; (Margin-Title) (padding nav)
+	--space-XXL: 4rem;
 
  # Font-size
  - Desktop :
@@ -51,11 +51,12 @@
 	
 # Radius
  --XS : 0.5 rem
- --S : 0.75rem
- --M : 1rem
+ --S : 0.75rem (logo button)
+ --M : 1rem (Carte)
  --L : 1.5rem
  --XL : 2rem
  --XXL: 4rem
+ --button : 999px  (for button, badge, profil)
  
 ## Typo by Era
 
@@ -120,7 +121,7 @@
     color: rgb(243, 232, 255);
     font-weight: 300;
     font-size: var(--dh1);
-    
+
 --Button = background-color: rgb(91, 45, 142);
     color: rgb(8, 8, 10);   
 
