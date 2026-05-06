@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap");
+
 .navBar-global {
 	display: flex;
 	align-items: center;
 	gap: var(--L);
 	padding: var(--S);
-	background-color: black;
+	background-color: transparent;
 }
 
 .navBar-button {
@@ -20,65 +22,66 @@
 .navBar-text {
 	font-size: 1.2rem;
 	font-weight: bold;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.2rem;
 	color: var(--color-neutral);
 }
 
-/* .navBar-text-B {
-	font-family: PROUT;
-} */
+.navBar-text-B,
+.navBar-button {
+	font-family: "Cormorant", serif;
+}
 
 /* Pour les ères */
 .navBar-button.before-prehistory {
 	background-color: var(--color-before-prehistory);
 }
 
-.navBar-text-A.before-prehistory {
-	font-family: var(--font-phanerozoic);
-}
-
 .navBar-button.prehistory {
 	background-color: var(--color-prehistory);
-}
-
-.navBar-text-A.prehistory {
-	font-family: var(--font-prehistoric);
 }
 
 .navBar-button.antiquity {
 	background-color: var(--color-antiquity);
 }
 
-.navBar-text-A.antiquity {
-	font-family: var(--font-antiquity);
-}
-
 .navBar-button.middle-ages {
 	background-color: var(--color-middle-ages);
-}
-
-.navBar-text-A.middle-ages {
-	font-family: var(--font-medieval);
 }
 
 .navBar-button.early-modern {
 	background-color: var(--color-early-modern);
 }
 
-.navBar-text-A.early-modern {
-	font-family: var(--font-modern);
-}
-
 .navBar-button.contemporary {
 	background-color: var(--color-contemporary);
 }
 
-.navBar-text-A.contemporary {
-	font-family: var(--font-contemporary);
-}
-
 .navBar-button.future {
 	background-color: var(--color-future);
+}
+
+.navBar-text-A.before-prehistory {
+	font-family: var(--font-phanerozoic);
+}
+
+.navBar-text-A.prehistory {
+	font-family: var(--font-prehistoric);
+}
+
+.navBar-text-A.antiquity {
+	font-family: var(--font-antiquity);
+}
+
+.navBar-text-A.middle-ages {
+	font-family: var(--font-medieval);
+}
+
+.navBar-text-A.early-modern {
+	font-family: var(--font-modern);
+}
+
+.navBar-text-A.contemporary {
+	font-family: var(--font-contemporary);
 }
 
 .navBar-text-A.future {
