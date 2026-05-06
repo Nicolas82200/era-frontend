@@ -1,7 +1,7 @@
 # ERA
 
 ## Présentation du projet
-Ce projet est un site web fullstack, nous avions pour thèmes un site web pour le passé ou le futur. <br>
+Ce projet est un site web fullstack. Le thème imposé était de créer un site autour du passé ou du futur. <br>
 Nous avons choisi de concevoir un site orienté **futur**, permettant de voyager à travers différentes époques : de la **Préhistoire**, en passant par le **Moyen Âge**, jusqu’à notre ère... 
 **l'époque apocalyptique** <br>
 <i>(oui, nous connaissons le futur)</i>
