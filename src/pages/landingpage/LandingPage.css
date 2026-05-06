@@ -23,8 +23,16 @@
 .LandingPage-Logo {
 	width: 40%;
 }
-.LandingPage-Slogan {
+.LandingPage-SloganDescribe {
+	width: 35%;
+	font-family: var(--font-modern);
+}
+.LandingPage-SloganBegining {
 	color: white;
+	font-size: 3rem;
+}
+.LandingPage-SloganEnding {
+	color: #f5d236;
 	font-size: 3rem;
 }
 .LandingPage-Describe {

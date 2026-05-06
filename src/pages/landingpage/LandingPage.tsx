@@ -31,13 +31,18 @@ function LandingPage() {
 			<div className="LandingPage-ContainerLogo">
 				<img className="LandingPage-Logo" src={Logo} alt="Era logo" />
 			</div>
-			<h1 className="LandingPage-Slogan">
-				L'histoire ne se lit plus, elle se vit !
-			</h1>
-			<p className="LandingPage-Describe">
-				De l'ère Précambriène à la conquête inter-galactique ! Revivez les
-				grands évenements Terriens.
-			</p>
+			<div className="LandingPage-SloganDescribe">
+				<h2 className="LandingPage-SloganBegining">
+					L'histoire ne se lit plus...
+				</h2>
+				<h2 className="LandingPage-SloganEnding">Elle se vit !</h2>
+				<p className="LandingPage-Describe">
+					De l'ère Précambriène à la conquête inter-galactique !
+				</p>
+				<p className="LandingPage-Describe">
+					Revivez les grands évenements Terriens.
+				</p>
+			</div>
 			<div className="LandingPage-Counters">
 				<div className="LandingPage-Counter">
 					<div className="LandingPage-CounterNumber">{periods.length}</div>
