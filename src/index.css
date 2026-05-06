@@ -28,6 +28,7 @@
 }
 
 :root {
+	/* Era colors */
 	--color-before-prehistory: #2c1810;
 	--color-prehistory: #8b6914;
 	--color-antiquity: #c0922a;
@@ -35,7 +36,10 @@
 	--color-early-modern: #3a6b45;
 	--color-contemporary: #2e5b8a;
 	--color-future: #5b2d8e;
+	--color-neutral: #ffffff;
+	--active-color: var(--color-before-prehistory);
 
+	/* Era fonts */
 	--font-phanerozoic: "Dinosaur", sans-serif;
 	--font-prehistoric: "Prehistoric", sans-serif;
 	--font-antiquity: "Antiquity", sans-serif;
@@ -43,7 +47,24 @@
 	--font-modern: "Modern", sans-serif;
 	--font-contemporary: "Contemporary", sans-serif;
 	--font-futur: "Futur", sans-serif;
+
+	/* Les Gap */
+	--XS: 0.5rem;
+	--S: 1rem;
+	--M: 1.5rem;
+	--L: 2rem;
+	--XL: 3rem;
+	--XXL: 4rem;
+
+	/* Les radius */
+	--radius-XS: 0.5rem;
+	--radius-S: 0.75rem;
+	--radius-M: 1rem;
+	--radius-L: 1.5rem;
+	--radius-XL: 2rem;
+	--radius-XXL: 4rem;
 }
+
 * {
 	padding: 0;
 	margin: 0;
