@@ -13,15 +13,15 @@ interface AccordionImage {
 }
 
 const images: AccordionImage[] = [
-	{ era: "medieval", src: earlyFire, alt: "Early fire" },
-	{ era: "medieval", src: earlyPottery, alt: "Early pottery" },
+	{ era: "prehistoric", src: earlyFire, alt: "EARLY FIRE" },
+	{ era: "prehistoric", src: earlyPottery, alt: "EARLY POTTERY" },
 	{
-		era: "medieval",
+		era: "prehistoric",
 		src: lascauxCavePaintings,
-		alt: "Lascaux cave paintings",
+		alt: "LASCAUX CAVE PAINTINGS",
 	},
-	{ era: "medieval", src: mammouthHunt, alt: "Mammoth hunt" },
-	{ era: "medieval", src: stonehenge, alt: "Stonehenge" },
+	{ era: "prehistoric", src: mammouthHunt, alt: "MAMMOTH HUNT" },
+	{ era: "prehistoric", src: stonehenge, alt: "STONEHENGE" },
 ];
 
 export default function Accordion() {
@@ -32,16 +32,18 @@ export default function Accordion() {
 			{images.map(({ src, alt, era }) => (
 				<li
 					key={alt}
-					className={`acc-card ${hovered === alt ? "active" : hovered !== null ? "shrink" : ""}`}
+					className={`accordion-card ${hovered === alt ? "active" : hovered !== null ? "shrink" : ""}`}
 				>
 					<button
 						type="button"
-						className={`acc-btn ${era}`}
+						className={`accordion-btn ${era}`}
 						onMouseEnter={() => setHovered(alt)}
 						aria-label={alt}
 					>
 						<img src={src} alt={alt} />
-						<p className="text">{alt}</p>
+						<div className={`accordion-div-text ${era}`}>
+							<p className={`accordion-text ${era}`}>{alt}</p>
+						</div>
 					</button>
 				</li>
 			))}
