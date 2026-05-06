@@ -1,5 +1,15 @@
 # ERA
 
+<div align=center>
+<img src="src/assets/README/logo/piouPP.png" width="60">
+<img src="src/assets/README/logo/piouPH.png" width="60">
+<img src="src/assets/README/logo/piouAN.png" width="60">
+<img src="src/assets/README/logo/piouMA.png" width="60">
+<img src="src/assets/README/logo/piouEM.png" width="60">
+<img src="src/assets/README/logo/piouEC.png" width="60">
+<img src="src/assets/README/logo/piouEA.png" width="60">
+</div>
+
 ## Présentation du projet
 Ce projet est un site web fullstack. Le thème imposé était de créer un site autour du passé ou du futur. <br>
 Nous avons choisi de concevoir un site orienté **futur**, permettant de voyager à travers différentes époques : de la **Préhistoire**, en passant par le **Moyen Âge**, jusqu’à notre ère... 
@@ -138,3 +148,12 @@ fetch("http://localhost:3310/periods")
 	.then((data) => set(data));
 ```
 
+<div align=center>
+<img src="src/assets/README/logo/piouPP.png" width="60">
+<img src="src/assets/README/logo/piouPH.png" width="60">
+<img src="src/assets/README/logo/piouAN.png" width="60">
+<img src="src/assets/README/logo/piouMA.png" width="60">
+<img src="src/assets/README/logo/piouEM.png" width="60">
+<img src="src/assets/README/logo/piouEC.png" width="60">
+<img src="src/assets/README/logo/piouEA.png" width="60">
+</div>
