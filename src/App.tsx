@@ -7,17 +7,17 @@ import "./App.css";
 import "./index.css";
 
 function App() {
-	return (
-		<>
-			<nav>
-				<NavBar />
-			</nav>
-			<main>
-				<Outlet />
-			</main>
-			<Timeline />
-		</>
-	);
+  return (
+    <>
+      <nav>
+        <NavBar />
+      </nav>
+      <main>
+        <Outlet />
+      </main>
+      <Timeline />
+    </>
+  );
 }
 
 export default App;
