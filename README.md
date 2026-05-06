@@ -137,3 +137,4 @@ fetch("http://localhost:3310/periods")
 	.then((res) => res.json())
 	.then((data) => set(data));
 ```
+
