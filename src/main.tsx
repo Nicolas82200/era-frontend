@@ -1,8 +1,8 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import App from "./App";
+import Era from "./pages/era/Era";
 import LandingPage from "./pages/landingpage/LandingPage";
 
 // page components
@@ -17,10 +17,10 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <LandingPage />,
 			},
-			// {
-			//   path: "/apoquePage",
-			//   element: <EpoquePage />,
-			// },
+			{
+				path: "/era/",
+				element: <Era />,
+			},
 		],
 	},
 ]);

@@ -1,16 +1,25 @@
-import type { periodsType } from "../../types/periodsType";
+import UsePeriods from "../../services/UsePeriods";
 import styles from "./Era.module.css";
 import "./Era.css";
-import "./Era.module.css";
-function Era({ period, nom }: { period: periodsType; nom: string }) {
+
+function Era() {
+	const allPeriods = UsePeriods();
+
 	return (
-		<section className="section_era">
-			<p className={`${styles[nom]}-sectionBadge`}>{period.time.start}</p>
-			<h2 className="section_era-title">{period.name}</h2>
-			{/* <img src={period.image_logo} alt="" /> */}
-			<p>{period.introduction}</p>
-			<p>{period.description}</p>
-		</section>
+		<>
+			{allPeriods
+				?.map((period) => (
+					<section key={period.id} className="section_era">
+						<p className={`${styles[period.name]}-sectionBadge`}>
+							{period.time.start}
+						</p>
+						<h2 className="section_era-title">{period.name}</h2>
+						<p>{period.introduction}</p>
+						<p>{period.description}</p>
+					</section>
+				))
+				.slice(0, 1)}
+		</>
 	);
 }
 
