@@ -1,37 +1,37 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import Era from "./pages/era/Era";
+import LandingPage from "./pages/landingpage/LandingPage";
+
 // page components
-// import LandingPage from "./pages/landingpage";
 // import EpoquePage from "./pages/EpoquePage";
 
 // router creation
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      // {
-      //   path: "/",
-      //   element: <LandingPage />,
-      // },
-      // {
-      //   path: "/apoquePage",
-      //   element: <EpoquePage />,
-      // },
-    ],
-  },
+	{
+		element: <App />,
+		children: [
+			{
+				path: "/",
+				element: <LandingPage />,
+			},
+			{
+				path: "/era/",
+				element: <Era />,
+			},
+		],
+	},
 ]);
 
 // rendering
 const rootElement = document.getElementById("root");
 
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
-    <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>,
-  );
+	ReactDOM.createRoot(rootElement).render(
+		<StrictMode>
+			<RouterProvider router={router} />
+		</StrictMode>,
+	);
 }
