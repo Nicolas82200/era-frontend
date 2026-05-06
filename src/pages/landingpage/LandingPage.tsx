@@ -35,7 +35,7 @@ function LandingPage() {
 				L'histoire ne se lit plus, elle se vit !
 			</h1>
 			<p className="LandingPage-Describe">
-				De l'ère Precambriène à la conquête inter-galactique ! Revivez les
+				De l'ère Précambriène à la conquête inter-galactique ! Revivez les
 				grands évenements Terriens.
 			</p>
 			<div className="LandingPage-Counters">

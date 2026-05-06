@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 
 import NavBar from "./components/NavBar/NavBar";
-import LandingPage from "./pages/landingpage/LandingPage";
 
 import "./App.css";
 
@@ -16,7 +15,6 @@ function App() {
 				<NavBar />
 			</nav>
 			<main>
-				<LandingPage />
 				<Outlet />
 			</main>
 		</>
