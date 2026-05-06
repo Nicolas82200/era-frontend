@@ -30,14 +30,27 @@
 :root {
 	/* Era colors */
 	--color-before-prehistory: #2c1810;
+	--color-before-prehistory-text: #d4a882;
+
 	--color-prehistory: #8b6914;
+	--color-prehistory-text: #fff3d6;
+
 	--color-antiquity: #c0922a;
+	--color-antiquity-text: #3d2200;
+
 	--color-middle-ages: #5a5248;
+	--color-middle-ages-text: #e8e2d9;
+
 	--color-early-modern: #3a6b45;
+	--color-early-modern-text: #d4f0dc;
+
 	--color-contemporary: #2e5b8a;
+	--color-contemporary-text: #c8e4ff;
+
 	--color-future: #5b2d8e;
 	--color-neutral: #ffffff;
 	--active-color: var(--color-before-prehistory);
+	--color-future-text: #e8d4ff;
 
 	/* Era fonts */
 	--font-phanerozoic: "Dinosaur", sans-serif;
@@ -48,21 +61,30 @@
 	--font-contemporary: "Contemporary", sans-serif;
 	--font-futur: "Futur", sans-serif;
 
-	/* Les Gap */
+	/* Radius */
 	--XS: 0.5rem;
-	--S: 1rem;
-	--M: 1.5rem;
-	--L: 2rem;
-	--XL: 3rem;
+	--S: 0.75rem;
+	--M: 1rem;
+	--L: 1.5rem;
+	--XL: 2rem;
 	--XXL: 4rem;
 
-	/* Les radius */
-	--radius-XS: 0.5rem;
-	--radius-S: 0.75rem;
-	--radius-M: 1rem;
-	--radius-L: 1.5rem;
-	--radius-XL: 2rem;
-	--radius-XXL: 4rem;
+	/* font-size */
+	/* Desktop */
+	--dh1: 3rem;
+	--dh2: 2rem;
+	--dh3: 1.75rem;
+	--dh4: 1.5rem;
+	--dh5: 1.25rem;
+	--dp: 1rem;
+
+	/* Space (base 8) */
+	--space-XS: 0.5rem;
+	--space-S: 0.75rem;
+	--space-M: 1rem;
+	--space-L: 1.5rem;
+	--space-XL: 2rem;
+	--space-XXL: 4rem;
 }
 
 * {

@@ -7,7 +7,7 @@ export type eventsType = {
     risque_level : number,
     periods : {
         id : number,
-        name : number
+        name : string
     }
     time : string,
     time_trip : string,
