@@ -29,12 +29,25 @@
 
 :root {
 	--color-before-prehistory: #2c1810;
+	--color-before-prehistory-text: #d4a882;
+
 	--color-prehistory: #8b6914;
+	--color-prehistory-text: #fff3d6;
+
 	--color-antiquity: #c0922a;
+	--color-antiquity-text: #3d2200;
+
 	--color-middle-ages: #5a5248;
+	--color-middle-ages-text: #e8e2d9;
+
 	--color-early-modern: #3a6b45;
+	--color-early-modern-text: #d4f0dc;
+
 	--color-contemporary: #2e5b8a;
+	--color-contemporary-text: #c8e4ff;
+
 	--color-future: #5b2d8e;
+	--color-future-text: #e8d4ff;
 
 	--font-phanerozoic: "Dinosaur", sans-serif;
 	--font-prehistoric: "Prehistoric", sans-serif;

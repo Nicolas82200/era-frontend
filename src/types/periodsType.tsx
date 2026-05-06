@@ -8,7 +8,8 @@ export type periodsType = {
         end : string
     }
     image : string,
-    image_logo : string
+    image_logo : string,
+    index_name : string
 }
 
 export type periodsTypeArray = periodsType[]
