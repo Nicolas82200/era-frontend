@@ -7,16 +7,21 @@ import mammouthHunt from "../../assets/images/mammouthHunt.png";
 import stonehenge from "../../assets/images/Stonehenge.png";
 
 interface AccordionImage {
+	era: string;
 	src: string;
 	alt: string;
 }
 
 const images: AccordionImage[] = [
-	{ src: earlyFire, alt: "Early fire" },
-	{ src: earlyPottery, alt: "Early pottery" },
-	{ src: lascauxCavePaintings, alt: "Lascaux cave paintings" },
-	{ src: mammouthHunt, alt: "Mammoth hunt" },
-	{ src: stonehenge, alt: "Stonehenge" },
+	{ era: "medieval", src: earlyFire, alt: "Early fire" },
+	{ era: "medieval", src: earlyPottery, alt: "Early pottery" },
+	{
+		era: "medieval",
+		src: lascauxCavePaintings,
+		alt: "Lascaux cave paintings",
+	},
+	{ era: "medieval", src: mammouthHunt, alt: "Mammoth hunt" },
+	{ era: "medieval", src: stonehenge, alt: "Stonehenge" },
 ];
 
 export default function Accordion() {
@@ -24,14 +29,14 @@ export default function Accordion() {
 
 	return (
 		<ul className="accordion" onMouseLeave={() => setHovered(null)}>
-			{images.map(({ src, alt }) => (
+			{images.map(({ src, alt, era }) => (
 				<li
 					key={alt}
 					className={`acc-card ${hovered === alt ? "active" : hovered !== null ? "shrink" : ""}`}
 				>
 					<button
 						type="button"
-						className="acc-btn"
+						className={`acc-btn ${era}`}
 						onMouseEnter={() => setHovered(alt)}
 						aria-label={alt}
 					>

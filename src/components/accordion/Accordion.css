@@ -3,11 +3,10 @@
 	width: 100%;
 	max-width: 75%;
 	height: 600px;
-	gap: 0;
+	gap: 2em;
 	list-style: none;
 	padding: 0;
 	margin: 0 auto;
-	background-color: var(--color-prehistory);
 }
 
 .text {
@@ -17,20 +16,57 @@
 	font-weight: bolder;
 	position: absolute;
 	bottom: 1rem;
-	left: 1rem;
+	left: 2rem;
 	z-index: 1;
+	writing-mode: horizontal-tb;
+	transform: rotate(-90deg);
+	white-space: nowrap;
+	transform-origin: left;
+	transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+
+	text-align: center;
 }
 
 .acc-card {
 	flex: 1 1 0;
 	overflow: hidden;
 	transition: flex 950ms cubic-bezier(0.25, 1, 0.5, 1);
+	border-radius: 15px;
 }
 
+.acc-btn.prehistoric {
+	background-color: var(--color-prehistory);
+}
+
+.acc-btn.phanerozoic {
+	background-color: var(--color-before-prehistory);
+}
+
+.acc-btn.antiquity {
+	background-color: var(--color-antiquity);
+}
+
+.acc-btn.medieval {
+	background-color: var(--color-middle-ages);
+}
+
+.acc-btn.modern {
+	background-color: var(--color-early-modern);
+}
+
+.acc-btn.contemporary {
+	background-color: var(--color-contemporary);
+}
+
+.acc-btn.futur {
+	background-color: var(--color-future);
+}
 .acc-card.active {
 	flex: 45%;
 }
-
+.acc-card.active .text {
+	transform: rotate(0deg);
+}
 .acc-card.shrink {
 	flex: 0.3 1 0;
 }
@@ -59,7 +95,7 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background-color: var(--color-prehistory);
+
 	opacity: 0.4;
 	transition: opacity 600ms ease;
 	z-index: 0;
@@ -72,6 +108,7 @@
 .acc-card.shrink .acc-btn::after {
 	opacity: 0.4;
 }
+
 .acc-card.active img {
 	opacity: 0.75;
 }
