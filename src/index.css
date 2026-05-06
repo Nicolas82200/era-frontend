@@ -28,6 +28,7 @@
 }
 
 :root {
+	/* Era colors */
 	--color-before-prehistory: #2c1810;
 	--color-before-prehistory-text: #d4a882;
 
@@ -47,8 +48,11 @@
 	--color-contemporary-text: #c8e4ff;
 
 	--color-future: #5b2d8e;
+	--color-neutral: #ffffff;
+	--active-color: var(--color-before-prehistory);
 	--color-future-text: #e8d4ff;
 
+	/* Era fonts */
 	--font-phanerozoic: "Dinosaur", sans-serif;
 	--font-prehistoric: "Prehistoric", sans-serif;
 	--font-antiquity: "Antiquity", sans-serif;
@@ -58,16 +62,15 @@
 	--font-futur: "Futur", sans-serif;
 
 	/* Radius */
-
 	--XS: 0.5rem;
 	--S: 0.75rem;
 	--M: 1rem;
 	--L: 1.5rem;
 	--XL: 2rem;
 	--XXL: 4rem;
+	--button: 999px;
 
 	/* font-size */
-
 	/* Desktop */
 	--dh1: 3rem;
 	--dh2: 2rem;
@@ -76,21 +79,6 @@
 	--dh5: 1.25rem;
 	--dp: 1rem;
 
-	/* Tablet */
-	--th1: 2.5rem;
-	--th2: 1.75rem;
-	--th3: 1.5rem;
-	--th4: 1.25rem;
-	--th5: 1rem;
-	--tp: 0.875rem;
-
-	/* Mobile */
-	--mh1: 2.25rem;
-	--mh2: 1.5rem;
-	--mh3: 1.25rem;
-	--mh4: 1.125rem;
-	--mh5: 1rem;
-	--mp: 0.875rem;
 	/* Space (base 8) */
 	--space-XS: 0.5rem;
 	--space-S: 0.75rem;
@@ -99,6 +87,7 @@
 	--space-XL: 2rem;
 	--space-XXL: 4rem;
 }
+
 * {
 	padding: 0;
 	margin: 0;
