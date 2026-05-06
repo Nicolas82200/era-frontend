@@ -1,0 +1,38 @@
+.LandingPage-Global {
+	position: relative;
+	min-height: 100vh;
+}
+.LandingPage-Background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	filter: brightness(0.3);
+}
+.LandingPage-BackgroundImg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.LandingPage-ContainerLogo {
+	display: flex;
+	justify-content: center;
+	filter: brightness(1.5);
+}
+.LandingPage-Logo {
+	width: 40%;
+}
+.LandingPage-Slogan {
+	color: white;
+	font-size: 3rem;
+}
+.LandingPage-Describe {
+	color: white;
+}
+.LandingPage-CounterNumber {
+	color: white;
+}
+.LandingPage-CounterName {
+	color: white;
+}
