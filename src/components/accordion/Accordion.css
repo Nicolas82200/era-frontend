@@ -7,6 +7,10 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	flex: 1;
+}
+.accordion-global {
+	padding-top: 5em;
 }
 
 /* ── Texte conteneur ── */
@@ -14,7 +18,7 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 2;
 	pointer-events: none;
 	width: 4.5em;
 	height: 100%;
@@ -138,6 +142,9 @@
 		transparent 75%
 	);
 }
+.accordion-card.active .button-era1::before {
+	opacity: 0;
+}
 
 /* ── Texte ── */
 .accordion-text {
@@ -260,6 +267,7 @@
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+	position: relative;
 	display: block;
 	opacity: 0.7;
 	transition:

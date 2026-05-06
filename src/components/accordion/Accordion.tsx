@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
+import AccordionCards from "../AccordionCards/AccordionCards";
 
 export default function Accordion() {
 	const [events, setEvents] = useState<eventsType[]>([]);
@@ -19,8 +20,8 @@ export default function Accordion() {
 	console.log(selectedPeriod);
 
 	return (
-		//Boutons temporaire pour changer d'époque
-		<section>
+		<section className="accordion-global">
+			{/* Boutons temporaire pour changer d'époque */}
 			<div className="filters">
 				<button type="button" onClick={() => setSelectedPeriod(1)}>
 					Phanérozoïque
@@ -63,10 +64,17 @@ export default function Accordion() {
 							onMouseEnter={() => setHovered(event.name)}
 							aria-label={event.name}
 						>
+							{hovered === event.name && <AccordionCards event={event} />}
 							<img src={event.images} alt={event.name} />
 							<div className={`accordion-div-text era${event.periods.id}`}>
 								<p className={`accordion-text era${event.periods.id}`}>
 									{event.name}
+									<button
+										type="button"
+										className={`button-era${event.periods.id}`}
+									>
+										Reserver
+									</button>
 								</p>
 							</div>
 						</button>
