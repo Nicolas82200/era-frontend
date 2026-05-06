@@ -19,7 +19,7 @@
 /* Alimentation de la barre de progression (JS) */
 .timeline-progress__fill {
 	height: 100%;
-	background-color: #5a5a6e;
+	background-color: rgb(91, 91, 91);
 	transition: width 0.3s ease; /* glissement doux */
 }
 
@@ -166,5 +166,5 @@
 
 /* La carte active à le nom en vert (en attendant) */
 .timeline-card--active .timeline-name {
-	color: green;
+	color: white;
 }

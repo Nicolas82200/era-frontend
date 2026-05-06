@@ -13,9 +13,6 @@ const PERIOD_COLORS = [
 	"--color-future",
 ];
 
-// En attendant le hook de Léo : fake emoji
-const FAKE_EMOJIS = ["🦴", "🔥", "⚡", "⚔️", "🌍", "⚙️", "🚀"];
-
 function Timeline() {
 	// On se débrouille car Léo veut pas donner son fetch
 	const [periods, setPeriods] = useState<periodsType[]>([]);
@@ -84,14 +81,21 @@ function Timeline() {
 						className={`timeline-card timeline-card--${getState(i)}`}
 						onClick={() => setActiveEraCard(i)}
 						style={
-							// classe dynamique grâce à period_colors qui récupère l'index
+							// Injecte la couleur de l'époque comme CSS custom property
 							{ "--color": `var(${PERIOD_COLORS[i]})` } as React.CSSProperties
 						}
 					>
 						<div className="timeline-dot-wrapper">
-							{/* Si 'actif' emoji, si 'past' coche, si 'future' vide. */}
+							{/* Si 'actif' vraie image, si 'past' coche, si 'future' vide. */}
 							<div className={`timeline-dot timeline-dot--${getState(i)}`}>
-								{getState(i) === "active" && <span>{FAKE_EMOJIS[i]}</span>}
+								{getState(i) === "active" && (
+									<img
+										src={period.image_logo}
+										alt={period.name}
+										width={24}
+										height={24}
+									/>
+								)}
 								{getState(i) === "past" && <span>✓</span>}
 							</div>
 						</div>
