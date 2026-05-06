@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
 .LandingPage-Global {
 	position: relative;
 	min-height: 100vh;
@@ -21,18 +23,63 @@
 	filter: brightness(1.5);
 }
 .LandingPage-Logo {
-	width: 40%;
+	margin-top: 2rem;
+	width: 35%;
 }
-.LandingPage-Slogan {
+.LandingPage-SloganGlobal {
+	margin-left: 2rem;
+	width: 45%;
+}
+.LandingPage-SloganBegining {
 	color: white;
-	font-size: 3rem;
+	font-family: "Cormorant Garamond", serif;
+	font-size: 5rem;
+}
+.LandingPage-SloganEnding {
+	color: #f5d236;
+	font-family: "Cormorant Garamond", serif;
+	font-style: italic;
+	font-size: 5rem;
+}
+.LandingPage-DescribeGlobal {
+	margin-left: 2rem;
+	margin-block: 1rem;
 }
 .LandingPage-Describe {
-	color: white;
+	color: rgb(140, 160, 173);
+}
+.LandingPage-CountersGlobal {
+	margin-left: 2rem;
+	display: flex;
+	justify-content: space-between;
+	margin-right: 4rem;
+}
+.LandingPage-Counters {
+	display: flex;
+	gap: 2rem;
+}
+.LandingPage-Counter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .LandingPage-CounterNumber {
-	color: white;
+	font-size: 2rem;
+	color: #f5d236;
 }
 .LandingPage-CounterName {
 	color: white;
+}
+.LandingPage-Button {
+	background-color: #f5d236;
+	width: 20rem;
+	border-radius: 999px;
+	border-color: 2px solid black;
+	font-size: 1rem;
+	font-family: var(--font-modern);
+	transition: transform 0.2s ease;
+}
+.LandingPage-Button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 1rem #f5d236;
 }
