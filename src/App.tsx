@@ -6,8 +6,6 @@ import "./App.css";
 
 import "./index.css";
 
-// import EpoquePage from "./pages/EpoquePage";
-
 function App() {
 	return (
 		<>

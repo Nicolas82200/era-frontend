@@ -1,0 +1,8 @@
+.Préhistoire-sectionBadge {
+	width: max-content;
+	background-color: rgba(139, 105, 20, 0.094);
+	border: 1px solid var(--color-prehistory-text);
+	padding: calc(var(--space-XS) / 2);
+	border-radius: var(--button);
+	color: var(--color-prehistory-text);
+}
