@@ -9,6 +9,7 @@ export type periodsType = {
 	};
 	image: string;
 	image_logo: string;
+	index_name: string;
 };
 
 export type periodsTypeArray = periodsType[];

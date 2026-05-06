@@ -1,9 +1,25 @@
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 import Timeline from "./components/Timeline/Timeline";
+import "./App.css";
+import "./index.css";
 
-export default function EpoquePage() {
+//page (à créer)
+// import LandingPage from "./pages/landingPage/LandingPage";
+// import EpoquePage from "./pages/EpoquePage";
+
+function App() {
 	return (
-		<div>
+		<>
+			<nav>
+				<NavBar />
+			</nav>
+			<main>
+				<Outlet />
+			</main>
 			<Timeline />
-		</div>
+		</>
 	);
 }
+
+export default App;
