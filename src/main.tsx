@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Era from "./pages/era/Era";
 import LandingPage from "./pages/landingpage/LandingPage";
+import Accordion from "./components/accordion/Accordion";
 
 // page components
 // import EpoquePage from "./pages/EpoquePage";
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "/era/",
 				element: <Era />,
+			},
+			{
+				path: "/Accordion",
+				element: <Accordion />,
 			},
 		],
 	},

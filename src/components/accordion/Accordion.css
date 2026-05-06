@@ -27,49 +27,49 @@
 		transparent 100%
 	);
 }
-.accordion-div-text.prehistoric {
+.accordion-div-text.era2 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-prehistory) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.phanerozoic {
+.accordion-div-text.era1 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-before-prehistory) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.antiquity {
+.accordion-div-text.era3 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-antiquity) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.medieval {
+.accordion-div-text.era4 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-middle-ages) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.modern {
+.accordion-div-text.era5 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-early-modern) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.contemporary {
+.accordion-div-text.era6 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-contemporary) 40%,
 		transparent 100%
 	);
 }
-.accordion-div-text.futur {
+.accordion-div-text.era7 {
 	background: linear-gradient(
 		to bottom,
 		var(--color-future) 40%,
@@ -78,49 +78,49 @@
 }
 
 /* active — gradient horizontal par époque */
-.accordion-card.active .accordion-div-text.prehistoric {
+.accordion-card.active .accordion-div-text.era2 {
 	background: linear-gradient(
 		to left,
 		var(--color-prehistory) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.phanerozoic {
+.accordion-card.active .accordion-div-text.era1 {
 	background: linear-gradient(
 		to left,
 		var(--color-before-prehistory) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.antiquity {
+.accordion-card.active .accordion-div-text.era3 {
 	background: linear-gradient(
 		to left,
 		var(--color-antiquity) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.medieval {
+.accordion-card.active .accordion-div-text.era4 {
 	background: linear-gradient(
 		to left,
 		var(--color-middle-ages) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.modern {
+.accordion-card.active .accordion-div-text.era5 {
 	background: linear-gradient(
 		to left,
 		var(--color-early-modern) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.contemporary {
+.accordion-card.active .accordion-div-text.era6 {
 	background: linear-gradient(
 		to left,
 		var(--color-contemporary) 30%,
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text.futur {
+.accordion-card.active .accordion-div-text.era7 {
 	background: linear-gradient(
 		to left,
 		var(--color-future) 30%,
@@ -155,61 +155,61 @@
 }
 
 /* ── Couleurs et fonts par époque ── */
-.accordion-text.prehistoric {
+.accordion-text.era2 {
 	font-size: 3em;
 	color: var(--color-prehistory-text);
 	font-family: var(--font-prehistoric);
 }
-.accordion-text.phanerozoic {
+.accordion-text.era1 {
 	color: var(--color-before-prehistory-text);
 	font-family: var(--font-phanerozoic);
 }
-.accordion-text.antiquity {
+.accordion-text.era3 {
 	font-size: 3em;
 	color: var(--color-antiquity-text);
 	font-family: var(--font-antiquity);
 }
-.accordion-text.medieval {
+.accordion-text.era4 {
 	font-size: 3em;
 	color: var(--color-middle-ages-text);
 	font-family: var(--font-medieval);
 }
-.accordion-text.modern {
+.accordion-text.era5 {
 	font-size: 3em;
 	color: var(--color-early-modern-text);
 	font-family: var(--font-modern);
 }
-.accordion-text.contemporary {
+.accordion-text.era6 {
 	font-size: 3em;
 	color: var(--color-contemporary-text);
 	font-family: var(--font-contemporary);
 }
-.accordion-text.futur {
+.accordion-text.era7 {
 	font-size: 3em;
 	color: var(--color-future-text);
 	font-family: var(--font-futur);
 }
 
 /* ── Background bouton par époque ── */
-.accordion-btn.prehistoric {
+.accordion-btn.era2 {
 	background-color: var(--color-prehistory);
 }
-.accordion-btn.phanerozoic {
+.accordion-btn.era1 {
 	background-color: var(--color-before-prehistory);
 }
-.accordion-btn.antiquity {
+.accordion-btn.era3 {
 	background-color: var(--color-antiquity);
 }
-.accordion-btn.medieval {
+.accordion-btn.era4 {
 	background-color: var(--color-middle-ages);
 }
-.accordion-btn.modern {
+.accordion-btn.era5 {
 	background-color: var(--color-early-modern);
 }
-.accordion-btn.contemporary {
+.accordion-btn.era6 {
 	background-color: var(--color-contemporary);
 }
-.accordion-btn.futur {
+.accordion-btn.era7 {
 	background-color: var(--color-future);
 }
 
@@ -242,13 +242,13 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	opacity: 0.4;
+	opacity: 0.5;
 	transition: opacity 600ms ease;
 	z-index: 0;
 }
 
 .accordion-card.active .accordion-btn::after {
-	opacity: 0.5;
+	opacity: 0.6;
 }
 .accordion-card.shrink .accordion-btn::after {
 	opacity: 0.4;
@@ -261,14 +261,14 @@
 	object-fit: cover;
 	object-position: center;
 	display: block;
-	opacity: 0.8;
+	opacity: 0.7;
 	transition:
 		opacity 600ms ease,
 		filter 600ms ease;
 }
 
 .accordion-card.active img {
-	opacity: 0.75;
+	opacity: 0.6;
 }
 .accordion-card.shrink img {
 	filter: blur(3px);
