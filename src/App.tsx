@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
+
 import NavBar from "./components/NavBar/NavBar";
 import Era from "./pages/era/Era";
 import UsePeriods from "./services/UsePeriods";
 import "./App.css";
-import "./index.css";
 
-//page (à créer)
-// import LandingPage from "./pages/landingPage/LandingPage";
-// import EpoquePage from "./pages/EpoquePage";
+import "./index.css";
 
 function App() {
 	const allPeriods = UsePeriods();
