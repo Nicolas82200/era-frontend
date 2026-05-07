@@ -13,12 +13,14 @@ function App() {
 	return (
 		<>
 			<nav>
-				<NavBar />
+				<NavBar activeIndex={activeIndex} />
 			</nav>
 			<main>
-				<Outlet />
+				<Outlet context={{ activeIndex, setActiveIndex }} />
 			</main>
-			<Timeline activeIndex={activeIndex} onSelect={setActiveIndex} />
+			<footer>
+				<Timeline activeIndex={activeIndex} onSelect={setActiveIndex} />
+			</footer>
 		</>
 	);
 }
