@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
 import Modale from "../Modale/Modale";
+import "./Accordion.css";
 interface TimelineProps {
 	activeIndex: number;
 }
@@ -30,8 +30,7 @@ export default function Accordion({ activeIndex }: TimelineProps) {
 		}
 		setHovered(name);
 	};
-	console.log(activeIndex);
-
+	console.log(filteredEvents);
 	return (
 		<section className="accordion-global">
 			<ul className="accordion" onMouseLeave={handleMouseLeave}>
