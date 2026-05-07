@@ -3,18 +3,18 @@ import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
 import Modale from "../Modale/Modale";
-
-export default function Accordion() {
+interface TimelineProps {
+	activeIndex: number;
+}
+export default function Accordion({ activeIndex }: TimelineProps) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
-	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
 	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-	const filteredEvents = selectedPeriod
-		? events.filter((event) => event.periods.id === selectedPeriod)
+	const filteredEvents = activeIndex
+		? events.filter((event) => event.periods.id === activeIndex)
 		: events;
 	useEffect(() => {
-		setSelectedPeriod(1);
 		fetch("http://localhost:3310/events")
 			.then((res) => res.json())
 			.then((data: eventsType[]) => setEvents(data));
@@ -30,35 +30,10 @@ export default function Accordion() {
 		}
 		setHovered(name);
 	};
-	console.log(selectedPeriod);
+	console.log(activeIndex);
 
 	return (
 		<section className="accordion-global">
-			{/* Boutons temporaire pour changer d'époque */}
-			<div className="filters">
-				<button type="button" onClick={() => setSelectedPeriod(1)}>
-					Phanérozoïque
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(2)}>
-					Préhistoire
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(3)}>
-					Antiquité
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(4)}>
-					Moyen-Age
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(5)}>
-					Age moderne
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(6)}>
-					age contemporain
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(7)}>
-					Futur
-				</button>
-			</div>
-
 			<ul className="accordion" onMouseLeave={handleMouseLeave}>
 				{filteredEvents.map((event) => (
 					<li
