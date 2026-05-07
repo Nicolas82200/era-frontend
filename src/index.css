@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Prehistoric";
-	src: url("src/assets/fonts/Prehistoric.ttf") format("truetype");
+	src: url("assets/fonts/Prehistoric.ttf") format("truetype");
 }
 @font-face {
 	font-family: "Medieval";
@@ -8,7 +8,7 @@
 }
 @font-face {
 	font-family: "Modern";
-	src: url("assets/fonts/EnchantedLand.ttf") format("truetype");
+	src: url("assets/fonts/EnchantedLand.otf") format("truetype");
 }
 @font-face {
 	font-family: "Dinosaur";
@@ -20,11 +20,11 @@
 }
 @font-face {
 	font-family: "Antiquity";
-	src: url("assets/fonts/Antiquity.ttf") format("truetype");
+	src: url("assets/fonts/Antiquity.otf") format("truetype");
 }
 @font-face {
 	font-family: "Futur";
-	src: url("assets/fonts/Alien.ttf") format("truetype");
+	src: url("assets/fonts/Futurama.ttf") format("truetype");
 }
 
 :root {
