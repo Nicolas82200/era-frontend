@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
+import Modale from "../Modale/Modale";
 
 export default function Accordion() {
+	const [modalOpen, setModalOpen] = useState(false);
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
 	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
@@ -84,14 +86,19 @@ export default function Accordion() {
 								<button
 									type="button"
 									className={`button-era button-era${event.periods.id}`}
+									onClick={(e) => {
+										e.stopPropagation();
+										setModalOpen(true);
+									}}
 								>
-									Reserver
+									Réserver
 								</button>
 							</div>
 						</button>
 					</li>
 				))}
 			</ul>
+			<Modale modalOpen={modalOpen} onClose={() => setModalOpen(false)} />
 		</section>
 	);
 }
