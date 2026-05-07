@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { periodsType } from "../../types/periodsType";
 import "./Timeline.css";
+import { useActivePeriods } from "../../context/PeriodsContext";
 
 // Chaque index correspond à une époque dans l'ordre
 const PERIOD_COLORS = [
@@ -28,6 +29,7 @@ function Timeline() {
 
 	// useState qui choppe l'index de la carte active, valeur initial à 0 poru la première ERA
 	const [activeEraCard, setActiveEraCard] = useState(0);
+	const { activePeriodsId, setActivePeriodsId } = useActivePeriods();
 
 	// Petit calcul JS pour faire la progression de la bordure haute :
 	// donc periods.length - 1, on a 7 périodes - 1 = 6 (-1 car les index commence à 0 et pas 1)
@@ -82,7 +84,10 @@ function Timeline() {
 						key={period.id}
 						// Classe dynamique selon l'état géré via getState
 						className={`timeline-card timeline-card--${getState(i)}`}
-						onClick={() => setActiveEraCard(i)}
+						onClick={() => {
+							setActivePeriodsId(i);
+							setActiveEraCard(i);
+						}}
 						style={
 							// classe dynamique grâce à period_colors qui récupère l'index
 							{ "--color": `var(${PERIOD_COLORS[i]})` } as React.CSSProperties

@@ -9,3 +9,7 @@
 	border-radius: var(--button);
 	color: var(--color-prehistory-text);
 }
+
+.test {
+	background-color: aqua;
+}
