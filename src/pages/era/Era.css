@@ -1,16 +1,35 @@
 /* Phanérozoïque/ Précambrien */
 .index_phanerozoique-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(
+		in srgb,
+		var(--color-before-prehistory) 20%,
+		transparent
+	);
+
 	height: 100vh;
 	display: flex;
 	width: 100vw;
 	flex-direction: column;
 	gap: var(--space-S);
+	position: relative;
 }
+
+.era-img {
+	width: 100vw;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	display: block;
+	z-index: -1;
+	filter: brightness(0.6);
+}
+/* .index_phanerozoique-section_era-img {
+	filter: brightness(0.6);
+} */
 .index_phanerozoique-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-before-prehistory-text);
@@ -19,11 +38,13 @@
 	color: var(--color-before-prehistory-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_phanerozoique-section_era-title {
 	color: var(--color-before-prehistory-text);
 	font-size: var(--dh1);
 	font-family: var(--font-phanerozoic);
+	margin-bottom: var(--space-XS);
 }
 .index_phanerozoique-section_era-desc {
 	font-size: calc(var(--dp) / 1.2);
@@ -32,10 +53,12 @@
 }
 /* Préhistoire */
 .index_prehistoire-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(
+		in srgb,
+		var(--color-prehistory) 20%,
+		transparent
+	);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -43,6 +66,7 @@
 	gap: var(--space-S);
 }
 .index_prehistoire-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-prehistory-text);
@@ -51,11 +75,13 @@
 	color: var(--color-prehistory-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_prehistoire-section_era-title {
 	color: var(--color-prehistory-text);
 	font-size: var(--dh1);
 	font-family: var(--font-prehistoric);
+	margin-bottom: var(--space-XS);
 }
 .index_prehistoire-section_era-desc {
 	font-size: calc(var(--dp) / 1.2);
@@ -64,10 +90,8 @@
 }
 /* Antiquité */
 .index_antiquite-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(in srgb, var(--color-antiquity) 20%, transparent);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -75,6 +99,7 @@
 	gap: var(--space-S);
 }
 .index_antiquite-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-antiquity-text);
@@ -83,6 +108,7 @@
 	color: var(--color-antiquity-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_antiquite-section_era-title {
 	color: var(--color-antiquity-text);
@@ -96,10 +122,12 @@
 }
 /* MA */
 .index_moyen-age-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(
+		in srgb,
+		var(--color-middle-ages) 20%,
+		transparent
+	);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -107,6 +135,7 @@
 	gap: var(--space-S);
 }
 .index_moyen-age-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-middle-ages-text);
@@ -115,6 +144,7 @@
 	color: var(--color-middle-ages-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_moyen-age-section_era-title {
 	color: var(--color-middle-ages-text);
@@ -128,10 +158,12 @@
 }
 /* TM */
 .index_epoque_moderne-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(
+		in srgb,
+		var(--color-early-modern) 20%,
+		transparent
+	);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -139,6 +171,7 @@
 	gap: var(--space-S);
 }
 .index_epoque_moderne-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-early-modern-text);
@@ -147,6 +180,7 @@
 	color: var(--color-early-modern-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_epoque_moderne-section_era-title {
 	color: var(--color-early-modern-text);
@@ -160,10 +194,12 @@
 }
 /* EC */
 .index_epoque_contemporaine-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(
+		in srgb,
+		var(--color-contemporary) 20%,
+		transparent
+	);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -171,6 +207,7 @@
 	gap: var(--space-S);
 }
 .index_epoque_contemporaine-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-contemporary-text);
@@ -179,6 +216,7 @@
 	color: var(--color-contemporary-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_epoque_contemporaine-section_era-title {
 	color: var(--color-contemporary-text);
@@ -192,10 +230,8 @@
 }
 /* Futur */
 .index_epoque_apocalyptique-section_era {
-	padding: var(--space-L);
-	background:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
-		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	/* padding: var(--space-L); */
+	background-color: color-mix(in srgb, var(--color-future) 20%, transparent);
 	height: 100vh;
 	display: flex;
 	width: 100vw;
@@ -203,6 +239,7 @@
 	gap: var(--space-S);
 }
 .index_epoque_apocalyptique-sectionBadge {
+	margin-top: var(--space-XXL);
 	width: max-content;
 	background-color: rgba(139, 105, 20, 0.04);
 	border: 1px solid var(--color-future-text);
@@ -211,6 +248,7 @@
 	color: var(--color-future-text);
 }
 .div_era {
+	margin-bottom: var(--space-S);
 }
 .index_epoque_apocalyptique-section_era-title {
 	color: var(--color-future-text);

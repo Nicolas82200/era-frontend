@@ -16,9 +16,11 @@ function App() {
 				<NavBar />
 			</nav>
 			<main>
-				<Outlet />
+				<Outlet activeIndex={activeIndex} />
 			</main>
-			<Timeline activeIndex={activeIndex} onSelect={setActiveIndex} />
+			<footer>
+				<Timeline activeIndex={activeIndex} onSelect={setActiveIndex} />
+			</footer>
 		</>
 	);
 }

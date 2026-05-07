@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
-
-export default function Accordion() {
+interface TimelineProps {
+	activeIndex: number;
+}
+export default function Accordion({ activeIndex }: TimelineProps) {
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
 	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
@@ -32,31 +34,6 @@ export default function Accordion() {
 
 	return (
 		<section className="accordion-global">
-			{/* Boutons temporaire pour changer d'époque */}
-			<div className="filters">
-				<button type="button" onClick={() => setSelectedPeriod(1)}>
-					Phanérozoïque
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(2)}>
-					Préhistoire
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(3)}>
-					Antiquité
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(4)}>
-					Moyen-Age
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(5)}>
-					Age moderne
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(6)}>
-					age contemporain
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(7)}>
-					Futur
-				</button>
-			</div>
-
 			<ul className="accordion" onMouseLeave={handleMouseLeave}>
 				{filteredEvents.map((event) => (
 					<li

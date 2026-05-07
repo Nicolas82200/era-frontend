@@ -2,8 +2,11 @@ import { useState } from "react";
 import UsePeriods from "../../services/UsePeriods";
 // import prehistoireImg from "../../assets/images/PrehistoryImg.png";
 import "./Era.css";
-
-function Era() {
+import Accordion from "../../components/accordion/Accordion";
+interface TimelineProps {
+	activeIndex: number;
+}
+function Era({ activeIndex }: TimelineProps) {
 	const [eraId, setEraId] = useState<number>();
 	const allPeriods = UsePeriods();
 	const id = allPeriods?.map((periods) => periods.id);
@@ -18,6 +21,11 @@ function Era() {
 			{allPeriods?.map((period) => (
 				<section key={period.id} className="section_era-container">
 					<section className={`${period.index_name}-section_era`}>
+						<img
+							className={`era-img ${period.index_name}-section_era-img`}
+							src={period.image || undefined}
+							alt={period.name}
+						/>
 						<p className={`${period.index_name}-sectionBadge`}>
 							{period.time.start}
 						</p>
@@ -29,6 +37,7 @@ function Era() {
 								{period.introduction}
 							</p>
 						</div>
+						<Accordion activeIndex={activeIndex} />
 					</section>
 				</section>
 			))}
