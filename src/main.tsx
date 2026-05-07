@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Era from "./pages/era/Era";
+// import Form from "./components/Formulaire/Formulaire";
 import LandingPage from "./pages/landingpage/LandingPage";
 
 // page components
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
 				path: "/era/",
 				element: <Era />,
 			},
+			// {
+			// 	path: "/form/",
+			// 	element: <Form />,
+			// },
 		],
 	},
 ]);
