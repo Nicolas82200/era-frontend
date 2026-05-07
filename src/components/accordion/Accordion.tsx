@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
+import { useActivePeriods } from "../../context/PeriodsContext";
 
 export default function Accordion() {
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
 	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
 	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+	const { activePeriodsId, setActivePeriodsId } = useActivePeriods();
 	const filteredEvents = selectedPeriod
 		? events.filter((event) => event.periods.id === selectedPeriod)
 		: events;
@@ -17,6 +19,11 @@ export default function Accordion() {
 			.then((res) => res.json())
 			.then((data: eventsType[]) => setEvents(data));
 	}, []);
+
+	useEffect(() => {
+		setSelectedPeriod(activePeriodsId);
+	}, [activePeriodsId]);
+
 	const handleMouseLeave = () => {
 		hoverTimeoutRef.current = setTimeout(() => {
 			setHovered(null);
@@ -32,31 +39,6 @@ export default function Accordion() {
 
 	return (
 		<section className="accordion-global">
-			{/* Boutons temporaire pour changer d'époque */}
-			<div className="filters">
-				<button type="button" onClick={() => setSelectedPeriod(1)}>
-					Phanérozoïque
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(2)}>
-					Préhistoire
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(3)}>
-					Antiquité
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(4)}>
-					Moyen-Age
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(5)}>
-					Age moderne
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(6)}>
-					age contemporain
-				</button>
-				<button type="button" onClick={() => setSelectedPeriod(7)}>
-					Futur
-				</button>
-			</div>
-
 			<ul className="accordion" onMouseLeave={handleMouseLeave}>
 				{filteredEvents.map((event) => (
 					<li

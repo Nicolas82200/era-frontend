@@ -12,7 +12,7 @@ function App() {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (
-		<>
+		<ActivePeriodsProvider>
 			<nav>
 				<NavBar />
 			</nav>
@@ -20,7 +20,7 @@ function App() {
 				<Outlet />
 			</main>
 			<Timeline activeIndex={activeIndex} onSelect={setActiveIndex} />
-		</>
+		</ActivePeriodsProvider>
 	);
 }
 

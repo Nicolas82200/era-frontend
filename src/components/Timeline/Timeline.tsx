@@ -25,6 +25,7 @@ function Timeline({ activeIndex, onSelect }: TimelineProps) {
 	const navigate = useNavigate();
 
 	const [periods, setPeriods] = useState<periodsType[]>([]);
+	const { activePeriodsId, setActivePeriodsId } = useActivePeriods();
 
 	useEffect(() => {
 		fetch("http://localhost:3310/periods")
@@ -89,6 +90,7 @@ function Timeline({ activeIndex, onSelect }: TimelineProps) {
 								navigate("/");
 								onSelect(0); // active visuellement la carte Accueil
 							} else {
+								setActivePeriodsId(i);
 								onSelect(i);
 							}
 						}}
