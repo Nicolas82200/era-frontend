@@ -16,6 +16,7 @@ type Period = {
   introduction: string;
   description: string;
   image?: string;
+  image_logo?: string;
 };
 
 type EraContextType = {

@@ -1,0 +1,183 @@
+/* ── AccordionCards.css ── */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+/* ── Conteneur principal ── */
+.accordion-content {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	display: grid;
+	overflow: visible;
+	grid-template-rows: auto auto 1fr auto auto auto auto;
+	gap: 0.6em;
+	padding: 1.5rem 2rem 6rem 1.5rem;
+
+	hyphens: none;
+}
+
+.accordion-content::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	opacity: 0.55;
+}
+
+/* ── Paragraphes ── */
+.accordion-content p {
+	margin: 0;
+	line-height: 1.5;
+	opacity: 0.9;
+}
+
+/* introduction */
+.accordion-content p:nth-of-type(1) {
+	font-size: var(--dh3);
+	font-style: italic;
+	opacity: 0.85;
+	border-left: 2px solid currentColor;
+	padding-left: 0.6em;
+}
+
+/* description */
+.accordion-content p:nth-of-type(2) {
+	opacity: 0.8;
+	display: -webkit-box;
+	font-size: var(--dh4);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* métadonnées */
+.accordion-content p:nth-of-type(3),
+.accordion-content p:nth-of-type(4),
+.accordion-content p:nth-of-type(5),
+.accordion-content p:nth-of-type(6) {
+	opacity: 0.75;
+	display: flex;
+	align-items: center;
+	gap: 0.4em;
+	font-size: var(--dh5);
+}
+
+.accordion-content p:nth-of-type(3)::before {
+	content: "⏱";
+}
+.accordion-content p:nth-of-type(4)::before {
+	content: "⚠️";
+}
+.accordion-content p:nth-of-type(5)::before {
+	content: "👥";
+}
+.accordion-content p:nth-of-type(6)::before {
+	content: "💰";
+}
+
+/* ── Animations ── */
+.accordion-content > * {
+	opacity: 0;
+	animation: fadeInUp 0.15s ease forwards;
+}
+
+.accordion-content > *:nth-child(1) {
+	animation-delay: 1000ms;
+}
+.accordion-content > *:nth-child(2) {
+	animation-delay: 1150ms;
+}
+.accordion-content > *:nth-child(3) {
+	animation-delay: 1300ms;
+}
+.accordion-content > *:nth-child(4) {
+	animation-delay: 1430ms;
+}
+.accordion-content > *:nth-child(5) {
+	animation-delay: 1540ms;
+}
+.accordion-content > *:nth-child(6) {
+	animation-delay: 1630ms;
+}
+.accordion-content > *:nth-child(7) {
+	animation-delay: 1700ms;
+}
+.accordion-content > *:nth-child(8) {
+	animation-delay: 1760ms;
+}
+
+/* ── Couleurs par époque ── */
+.accordion-contentEra1 {
+	font-family: var(--font-phanerozoic);
+	color: var(--color-before-prehistory-text);
+}
+.accordion-contentEra1::before {
+	background-color: var(--color-before-prehistory);
+}
+.accordion-contentEra2 {
+	font-family: var(--font-prehistoric);
+	color: var(--color-prehistory-text);
+}
+.accordion-contentEra2::before {
+	background-color: var(--color-prehistory);
+}
+.accordion-contentEra3 {
+	font-family: var(--font-antiquity);
+	color: var(--color-antiquity-text);
+	font-weight: bolder;
+}
+.accordion-contentEra3::before {
+	background-color: var(--color-antiquity);
+}
+.accordion-contentEra4 {
+	font-family: var(--font-medieval);
+	color: var(--color-middle-ages-text);
+}
+.accordion-contentEra4::before {
+	background-color: var(--color-middle-ages);
+}
+.accordion-contentEra5 {
+	font-family: var(--font-modern);
+	color: var(--color-early-modern-text);
+}
+.accordion-contentEra5::before {
+	background-color: var(--color-early-modern);
+}
+.accordion-contentEra6 {
+	font-family: var(--font-contemporary);
+	color: var(--color-contemporary-text);
+}
+.accordion-contentEra6::before {
+	background-color: var(--color-contemporary);
+}
+.accordion-contentEra7 {
+	font-family: var(--font-futur);
+	color: var(--color-future-text);
+}
+.accordion-contentEra7::before {
+	background-color: var(--color-future);
+}
+
+.accordion-contentEra1,
+.accordion-contentEra2,
+.accordion-contentEra3,
+.accordion-contentEra4,
+.accordion-contentEra5,
+.accordion-contentEra6,
+.accordion-contentEra7 {
+	font-size: 1rem;
+}
