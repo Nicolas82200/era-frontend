@@ -7,7 +7,7 @@ export type periodsType = {
 		start: string;
 		end: string;
 	};
-	image: string;
+	image: string | null;
 	image_logo: string;
 	index_name: string;
 };
