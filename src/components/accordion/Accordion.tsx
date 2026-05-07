@@ -1,28 +1,29 @@
 import { useEffect, useRef, useState } from "react";
-import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
+import Modale from "../Modale/Modale";
 import { useActivePeriods } from "../../context/PeriodsContext";
+import "./Accordion.css";
+interface TimelineProps {
+	activeIndex: number;
+}
 
-export default function Accordion() {
+export default function Accordion({ activeIndex }: TimelineProps) {
+	const [modalOpen, setModalOpen] = useState(false);
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
-	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
 	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-	const { activePeriodsId, setActivePeriodsId } = useActivePeriods();
-	const filteredEvents = selectedPeriod
-		? events.filter((event) => event.periods.id === selectedPeriod)
+
+	const { activePeriodsId } = useActivePeriods();
+	const filteredEvents = activePeriodsId
+		? events.filter((event) => event.periods.id === activePeriodsId)
 		: events;
+
 	useEffect(() => {
-		setSelectedPeriod(1);
 		fetch("http://localhost:3310/events")
 			.then((res) => res.json())
 			.then((data: eventsType[]) => setEvents(data));
 	}, []);
-
-	useEffect(() => {
-		setSelectedPeriod(activePeriodsId);
-	}, [activePeriodsId]);
 
 	const handleMouseLeave = () => {
 		hoverTimeoutRef.current = setTimeout(() => {
@@ -35,8 +36,7 @@ export default function Accordion() {
 		}
 		setHovered(name);
 	};
-	console.log(selectedPeriod);
-
+	console.log(filteredEvents);
 	return (
 		<section className="accordion-global">
 			<ul className="accordion" onMouseLeave={handleMouseLeave}>
@@ -66,14 +66,19 @@ export default function Accordion() {
 								<button
 									type="button"
 									className={`button-era button-era${event.periods.id}`}
+									onClick={(e) => {
+										e.stopPropagation();
+										setModalOpen(true);
+									}}
 								>
-									Reserver
+									Réserver
 								</button>
 							</div>
 						</button>
 					</li>
 				))}
 			</ul>
+			<Modale modalOpen={modalOpen} onClose={() => setModalOpen(false)} />
 		</section>
 	);
 }
