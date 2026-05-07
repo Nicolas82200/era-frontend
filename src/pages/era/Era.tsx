@@ -1,5 +1,5 @@
 import UsePeriods from "../../services/UsePeriods";
-
+// import prehistoireImg from "../../assets/images/PrehistoryImg.png";
 import "./Era.css";
 
 function Era() {
@@ -9,11 +9,12 @@ function Era() {
 		<>
 			{allPeriods
 				?.map((period) => (
-					<section key={period.id} className="section_era">
+					<section key={period.id} className={`${period.name}-section_era`}>
 						<p className={`${period.name}-sectionBadge`}>{period.time.start}</p>
-						<h2 className="section_era-title">{period.name}</h2>
-						<p>{period.introduction}</p>
-						<p>{period.description}</p>
+						<div className="div_era">
+							<h2 className="section_era-title">{period.name}</h2>
+							<p>{period.introduction}</p>
+						</div>
 					</section>
 				))
 				.slice(1, 2)}

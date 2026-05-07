@@ -1,5 +1,12 @@
-.section_era {
+.Préhistoire-section_era {
 	padding: var(--space-L);
+	background:
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6))
+		url("../../assets/images/PrehistoryImg.png") center / cover no-repeat;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-S);
 }
 .Préhistoire-sectionBadge {
 	width: max-content;
