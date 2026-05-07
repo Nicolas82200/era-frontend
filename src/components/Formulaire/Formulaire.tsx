@@ -14,12 +14,14 @@ import "./Formulaire.css";
 function Formulaire() {
 	return (
 		<div className="Formulaire-Global">
-			<p>Afin de participer à l'évenement, veuillez compléter ce formulaire</p>
+			<p className="Formulaire-Describe">
+				Afin de participer à l'évenement, veuillez compléter ce formulaire
+			</p>
 			<form className="Fomulaire-InputGlobal">
-				<label className="Fomulaire-Input">
+				<label className="Formulaire-Input">
 					Nom : <input className="Fomulaire-InputCase" type="text" required />
 				</label>
-				<label className="Fomulaire-Input">
+				<label className="Formulaire-Input">
 					Prénom :
 					<input className="Fomulaire-InputCase" type="text" required />
 				</label>
@@ -35,11 +37,15 @@ function Formulaire() {
 					Date de depart :
 					<input className="Fomulaire-InputCase" type="date" required />
 				</label>
-				<label className="Fomulaire-InputCase">
+				<label className="Fomulaire-InputCGU">
 					Validez les CGU <input type="checkbox" />
 				</label>
-				<div className="Fomulaire-button">
-					<input type="submit" value="Valider mon inscription"></input>
+				<div className="Fomulaire-ButtonGlobal">
+					<input
+						className="Fomulaire-Button"
+						type="submit"
+						value="Valider mon inscription"
+					></input>
 				</div>
 			</form>
 		</div>

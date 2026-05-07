@@ -1,0 +1,27 @@
+.Modale-Overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(11px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+.Modale-OverlayButton {
+	display: none;
+}
+.Modale-Global {
+	background: white;
+	border-radius: 1rem;
+	position: relative; /* pour positionner le bouton ✕ */
+}
+
+.Modale-Close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+}

@@ -18,16 +18,20 @@ function Modale({
 			{modalOpen && (
 				<>
 					{/* Overlay pour fermer en cliquant dehors */}
-					<div className="Modale-overlay">
-						<button type="button" onClick={onClose} />
-					</div>
+					<div className="Modale-Overlay">
+						<button
+							className="Modale-OverlayButton"
+							type="button"
+							onClick={onClose}
+						/>
 
-					{/* Contenu de la modale */}
-					<div className="Modale-Global">
-						<button type="button" className="Modale-Close" onClick={onClose}>
-							✕
-						</button>
-						<Formulaire />
+						{/* Contenu de la modale */}
+						<div className="Modale-Global">
+							<button type="button" className="Modale-Close" onClick={onClose}>
+								✕
+							</button>
+							<Formulaire />
+						</div>
 					</div>
 				</>
 			)}

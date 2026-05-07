@@ -1,33 +1,47 @@
 .Formulaire-Global {
-	margin-top: 10rem;
-	width: 20rem;
-	min-height: 10rem;
-	background-color: rgb(177, 177, 177);
+	width: 30rem;
+	min-height: 30rem;
+	background-color: rgb(41, 40, 40);
 	padding: 1rem;
-	border-radius: 2rem;
+	border-radius: 1rem;
 	box-shadow: 5px 5px 5px rgb(45, 45, 45);
+	color: white;
+}
+.Formulaire-Describe {
+	font-size: 1.5rem;
 }
 .Fomulaire-InputGlobal {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-	padding-top: 1rem;
+	gap: 1.5rem;
+	padding-top: 2rem;
 }
 
 .Fomulaire-InputCase {
 	border-radius: 5px;
-	height: 1.5rem;
+	text-align: center;
+	width: 15rem;
+	height: 2.5rem;
 	font-size: 1rem;
 }
 .Formulaire-InputDate,
 .Formulaire-InputMail,
-.Fomulaire-Input {
-	font-size: 1rem;
+.Formulaire-Input {
+	font-size: 1.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.Fomulaire-button {
+.Fomulaire-InputCGU {
+	font-size: 1.5rem;
+}
+.Fomulaire-ButtonGlobal {
 	display: flex;
 	justify-content: center;
+}
+.Fomulaire-Button {
+	height: 2.5rem;
+	width: 15rem;
+	border-radius: 999px;
+	background: linear-gradient(-25deg, #c47a4a, #e6a574, white);
 }
