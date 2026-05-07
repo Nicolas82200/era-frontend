@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Accordion.css";
 import type { eventsType } from "../../types/eventsType";
 import AccordionCards from "../AccordionCards/AccordionCards";
@@ -7,16 +7,27 @@ export default function Accordion() {
 	const [events, setEvents] = useState<eventsType[]>([]);
 	const [hovered, setHovered] = useState<string | null>(null);
 	const [selectedPeriod, setSelectedPeriod] = useState<number | null>(null);
-
+	const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 	const filteredEvents = selectedPeriod
 		? events.filter((event) => event.periods.id === selectedPeriod)
 		: events;
 	useEffect(() => {
+		setSelectedPeriod(1);
 		fetch("http://localhost:3310/events")
 			.then((res) => res.json())
 			.then((data: eventsType[]) => setEvents(data));
 	}, []);
-
+	const handleMouseLeave = () => {
+		hoverTimeoutRef.current = setTimeout(() => {
+			setHovered(null);
+		}, 500);
+	};
+	const handleMouseEnter = (name: string) => {
+		if (hoverTimeoutRef.current) {
+			clearTimeout(hoverTimeoutRef.current);
+		}
+		setHovered(name);
+	};
 	console.log(selectedPeriod);
 
 	return (
@@ -46,7 +57,7 @@ export default function Accordion() {
 				</button>
 			</div>
 
-			<ul className="accordion" onMouseLeave={() => setHovered(null)}>
+			<ul className="accordion" onMouseLeave={handleMouseLeave}>
 				{filteredEvents.map((event) => (
 					<li
 						key={event.id}
@@ -61,7 +72,7 @@ export default function Accordion() {
 						<button
 							type="button"
 							className={`accordion-btn era${event.periods.id}`}
-							onMouseEnter={() => setHovered(event.name)}
+							onMouseEnter={() => handleMouseEnter(event.name)}
 							aria-label={event.name}
 						>
 							{hovered === event.name && <AccordionCards event={event} />}
@@ -69,13 +80,13 @@ export default function Accordion() {
 							<div className={`accordion-div-text era${event.periods.id}`}>
 								<p className={`accordion-text era${event.periods.id}`}>
 									{event.name}
-									<button
-										type="button"
-										className={`button-era${event.periods.id}`}
-									>
-										Reserver
-									</button>
 								</p>
+								<button
+									type="button"
+									className={`button-era button-era${event.periods.id}`}
+								>
+									Reserver
+								</button>
 							</div>
 						</button>
 					</li>
