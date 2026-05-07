@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Era from "./pages/era/Era";
-// import Form from "./components/Formulaire/Formulaire";
+import Form from "./components/Formulaire/Formulaire";
 import LandingPage from "./pages/landingpage/LandingPage";
 import Accordion from "./components/accordion/Accordion";
 
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
 			{
 				path: "/Accordion",
 				element: <Accordion />,
+			},
+			{
+				path: "/form",
+				element: <Form />,
 			},
 		],
 	},

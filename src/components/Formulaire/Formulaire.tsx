@@ -1,4 +1,15 @@
 import "./Formulaire.css";
+// import type from "../../types/periodsType";
+
+// const periodColors: Record<number, string> = {
+// 	1: "var(--color-before-prehistory)",
+// 	2: "var(--color-prehistory)",
+// 	3: "var(--color-antiquity)",
+// 	4: "var(--color-middle-ages)",
+// 	5: "var(--color-early-modern)",
+// 	6: "var(--color-contemporary)",
+// 	7: "var(--color-future)",
+// };
 
 function Formulaire() {
 	return (
