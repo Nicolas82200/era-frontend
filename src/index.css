@@ -52,6 +52,12 @@
 	--active-color: var(--color-before-prehistory);
 	--color-future-text: #e8d4ff;
 
+	--color-timeline-progress-empty: #2a2a35;
+	--color-timeline-progress-full: #5b5b5b;
+	--color-timeline-bg: #1a1a24;
+	--color-timeline-bg-dot: #2e2e3e;
+	--color-timeline-name: #4a4a5a;
+
 	/* Era fonts */
 	--font-phanerozoic: "Dinosaur", sans-serif;
 	--font-prehistoric: "Prehistoric", sans-serif;

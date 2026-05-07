@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import type { periodsType } from "../../types/periodsType";
 import "./Timeline.css";
 
-// Chaque index correspond à une époque dans l'ordre
+interface TimelineProps {
+	activeIndex: number;
+	onSelect: (i: number) => void;
+}
+
 const PERIOD_COLORS = [
+	"--color-neutral",
 	"--color-before-prehistory",
 	"--color-prehistory",
 	"--color-antiquity",
@@ -13,8 +20,9 @@ const PERIOD_COLORS = [
 	"--color-future",
 ];
 
-function Timeline() {
-	// On se débrouille car Léo veut pas donner son fetch
+function Timeline({ activeIndex, onSelect }: TimelineProps) {
+	const navigate = useNavigate();
+
 	const [periods, setPeriods] = useState<periodsType[]>([]);
 
 	useEffect(() => {
@@ -23,42 +31,40 @@ function Timeline() {
 			.then((data) => setPeriods(data));
 	}, []);
 
-	// useState qui choppe l'index de la carte active, valeur initial à 0 poru la première ERA
-	const [activeEraCard, setActiveEraCard] = useState(0);
+	// On ajoute la carte Accueil au début manuellement
+	const allCards = [
+		{
+			id: 0,
+			name: "Accueil",
+			time: { start: ".", end: "" },
+			image_logo: "🏠",
+			introduction: "",
+			description: "",
+			image: null,
+			index_name: "",
+		},
+		...periods,
+	];
 
-	// Petit calcul JS pour faire la progression de la bordure haute :
-	// donc periods.length - 1, on a 7 périodes - 1 = 6 (-1 car les index commence à 0 et pas 1)
-	// on divise donc la position active par 6 (et on fait *100 pour avoir un %)
+	// activeIndex vient maintenant des props d'App.tsx
+	// c'est App.tsx qui gère la mémoire de l'index actif
+	// et le partage entre Timeline et le carrousel d'Era
+
 	const progressPct =
-		activeEraCard === 0
-			? 7
-			: // Math.round pour faire un arrondi
-				Math.round((activeEraCard / (periods.length - 1)) * 100);
+		activeIndex === 0 ? 7 : Math.round((activeIndex / periods.length) * 100);
 
-	// Permet d'obtenir le statut de la carte pour le CSS:
-
-	// Donc on commence avec useState qui donne activeEraCard à 0.
-	// Quand on clique sur une carte, onClick déclenche setActiveEraCard(i)
-	// ce qui met à jour le state et re-rend le composant.
-	// À chaque re-render, getState est appelée pour chaque carte via le .map()
-	// Elle compare l'index 'i' de la carte avec activeEraCard
-	// pour déterminer si la carte est "past", "active" ou "future".
 	function getState(i: number): "past" | "active" | "future" {
-		if (i < activeEraCard) return "past";
-		if (i === activeEraCard) return "active";
+		if (i < activeIndex) return "past";
+		if (i === activeIndex) return "active";
 		return "future";
 	}
 
-	// Connaître la largeur des cards pour faire glisser le fond coloré
-	const cardWidth = 100 / periods.length;
+	const cardWidth = 100 / allCards.length;
 
 	return (
 		<nav className="timeline">
-			{/* La fameuse barre de progression */}
 			<div className="timeline-progress">
 				<div
-					// Le remplissage de la barre de progression avec un calcul dynamioque de la largeur
-					// genre si je clique sur la carte 4 donne genre 50% donc la barre progress
 					className="timeline-progress__fill"
 					style={{ width: `${progressPct}%` }}
 				/>
@@ -67,35 +73,41 @@ function Timeline() {
 				<div
 					className="timeline-active-bg"
 					style={{
-						left: `${activeEraCard * cardWidth}%`,
+						left: `${activeIndex * cardWidth}%`,
 						width: `${cardWidth}%`,
-						backgroundColor: `var(${PERIOD_COLORS[activeEraCard]})`,
+						backgroundColor: `var(${PERIOD_COLORS[activeIndex]})`,
 					}}
 				/>
-				{/* Pour chaque period donne tous l'object et son index */}
-				{periods.map((period, i) => (
+				{allCards.map((period, i) => (
 					<button
 						type="button"
 						key={period.id}
-						// Classe dynamique selon l'état géré via getState
 						className={`timeline-card timeline-card--${getState(i)}`}
-						onClick={() => setActiveEraCard(i)}
+						onClick={() => {
+							if (i === 0) {
+								navigate("/");
+								onSelect(0); // active visuellement la carte Accueil
+							} else {
+								onSelect(i);
+							}
+						}}
 						style={
-							// Injecte la couleur de l'époque comme CSS custom property
 							{ "--color": `var(${PERIOD_COLORS[i]})` } as React.CSSProperties
 						}
 					>
 						<div className="timeline-dot-wrapper">
-							{/* Si 'actif' vraie image, si 'past' coche, si 'future' vide. */}
 							<div className={`timeline-dot timeline-dot--${getState(i)}`}>
-								{getState(i) === "active" && (
-									<img
-										src={period.image_logo}
-										alt={period.name}
-										width={24}
-										height={24}
-									/>
-								)}
+								{getState(i) === "active" &&
+									(i === 0 ? (
+										<span>🏠</span>
+									) : (
+										<img
+											src={period.image_logo}
+											alt={period.name}
+											width={24}
+											height={24}
+										/>
+									))}
 								{getState(i) === "past" && <span>✓</span>}
 							</div>
 						</div>
