@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap"); */
 
 .navBar-global {
 	display: flex;
@@ -30,64 +30,59 @@
 	color: var(--color-neutral);
 }
 
-.navBar-text-B,
-.navBar-button {
-	font-family: "Cormorant", serif;
-}
-
 /* Pour les ères */
-.navBar-button.before-prehistory {
+.navBar-button1 {
 	background-color: var(--color-before-prehistory);
 }
 
-.navBar-button.prehistory {
+.navBar-button2 {
 	background-color: var(--color-prehistory);
 }
 
-.navBar-button.antiquity {
+.navBar-button3 {
 	background-color: var(--color-antiquity);
 }
 
-.navBar-button.middle-ages {
+.navBar-button4 {
 	background-color: var(--color-middle-ages);
 }
 
-.navBar-button.early-modern {
+.navBar-button5 {
 	background-color: var(--color-early-modern);
 }
 
-.navBar-button.contemporary {
+.navBar-button6 {
 	background-color: var(--color-contemporary);
 }
 
-.navBar-button.future {
+.navBar-button7 {
 	background-color: var(--color-future);
 }
 
-.navBar-text-A.before-prehistory {
+.navBar-text- {
 	font-family: var(--font-phanerozoic);
 }
 
-.navBar-text-A.prehistory {
+.navBar-text-2 {
 	font-family: var(--font-prehistoric);
 }
 
-.navBar-text-A.antiquity {
+.navBar-text-3 {
 	font-family: var(--font-antiquity);
 }
 
-.navBar-text-A.middle-ages {
+.navBar-text-4 {
 	font-family: var(--font-medieval);
 }
 
-.navBar-text-A.early-modern {
+.navBar-text-5 {
 	font-family: var(--font-modern);
 }
 
-.navBar-text-A.contemporary {
+.navBar-text-6 {
 	font-family: var(--font-contemporary);
 }
 
-.navBar-text-A.future {
+.navBar-text-7 {
 	font-family: var(--font-futur);
 }

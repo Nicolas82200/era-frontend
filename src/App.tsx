@@ -13,7 +13,7 @@ function App() {
 	return (
 		<>
 			<nav>
-				<NavBar />
+				<NavBar activeIndex={activeIndex} />
 			</nav>
 			<main>
 				<Outlet context={{ activeIndex, setActiveIndex }} />

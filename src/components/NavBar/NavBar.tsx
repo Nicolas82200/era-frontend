@@ -1,21 +1,19 @@
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-interface NavBarProps {
-  currentEra?: string;
-}
+function NavBar({ activeIndex }: { activeIndex: number }) {
+	console.log(activeIndex);
 
-function NavBar({ currentEra = "before-prehistory" }: NavBarProps) {
-  return (
-    <nav className="navBar-global">
-      <button type="button" className={`navBar-button ${currentEra}`}>
-        E
-      </button>
-      <div className="navBar-text">
-        <span className={`navBar-text-A ${currentEra}`}>E</span>
-        <span className={`navBar-text-B ${currentEra}`}>RA</span>
-      </div>
-    </nav>
-  );
+	return (
+		<nav className="navBar-global">
+			<Link to="/" className={`navBar-button navBar-button${activeIndex}`}>
+				<span className={`navBar-text-A navBar-text-${activeIndex}`}>E</span>
+			</Link>
+			<div className="navBar-text">
+				<span className={`navBar-text-${activeIndex}`}>ERA</span>
+			</div>
+		</nav>
+	);
 }
 
 export default NavBar;
