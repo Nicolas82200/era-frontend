@@ -1,18 +1,34 @@
+import { useLocation } from "react-router-dom";
+import { useEra } from "../../contextTest/ContextTest";
+import { eraIndexToCssClass } from "../../utils/eraMapping";
 import "./NavBar.css";
 
-interface NavBarProps {
-  currentEra?: string;
-}
+function NavBar() {
+  const location = useLocation();
+  const { currentEraId, periods } = useEra();
 
-function NavBar({ currentEra = "before-prehistory" }: NavBarProps) {
+  const getCurrentEra = () => {
+    return periods?.find((p) => p.id === currentEraId);
+  };
+
+  const getCurrentCssClass = () => {
+    if (location.pathname === "/") return "neutral";
+    const era = getCurrentEra();
+    if (!era) return "before-prehistory";
+    const cssClass = eraIndexToCssClass[era.index_name];
+    return cssClass || "before-prehistory";
+  };
+
+  const eraClass = getCurrentCssClass();
+
   return (
     <nav className="navBar-global">
-      <button type="button" className={`navBar-button ${currentEra}`}>
+      <button type="button" className={`navBar-button ${eraClass}`}>
         E
       </button>
       <div className="navBar-text">
-        <span className={`navBar-text-A ${currentEra}`}>E</span>
-        <span className={`navBar-text-B ${currentEra}`}>RA</span>
+        <span className={`navBar-text-A ${eraClass}`}>E</span>
+        <span className="navBar-text-B">RA</span>
       </div>
     </nav>
   );

@@ -9,6 +9,7 @@
 	width: 100%;
 	gap: var(--L);
 	padding: var(--S);
+	padding-left: 32px;
 	background-color: transparent;
 }
 
@@ -35,7 +36,16 @@
 	font-family: "Cormorant", serif;
 }
 
-/* Pour les ères */
+/* Style neutre pour la LandingPage */
+.navBar-button.neutral,
+.navBar-logo-E.neutral {
+	/* background-color: #feac61; */
+	background: linear-gradient(-25deg, #c47a4a, #e6a574, white);
+	color: black;
+	font-family: "Cormorant", serif;
+}
+
+/* Style pour chaque ère */
 .navBar-button.before-prehistory {
 	background-color: var(--color-before-prehistory);
 }
