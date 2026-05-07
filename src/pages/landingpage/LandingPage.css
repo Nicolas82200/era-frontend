@@ -5,7 +5,7 @@
 	min-height: 100vh;
 }
 .LandingPage-Background {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
@@ -36,7 +36,10 @@
 	font-size: 5rem;
 }
 .LandingPage-SloganEnding {
-	color: #f5d236;
+	background: linear-gradient(-25deg, #c47a4a, #e6a574, rgb(243, 222, 209));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	font-family: "Cormorant Garamond", serif;
 	font-style: italic;
 	font-size: 5rem;
@@ -53,6 +56,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin-right: 4rem;
+	margin-bottom: 20rem;
 }
 .LandingPage-Counters {
 	display: flex;
@@ -65,21 +69,36 @@
 }
 .LandingPage-CounterNumber {
 	font-size: 2rem;
-	color: #f5d236;
+	color: #e7b894;
 }
 .LandingPage-CounterName {
 	color: white;
 }
 .LandingPage-Button {
-	background-color: #f5d236;
+	background: linear-gradient(-25deg, #c47a4a, #e6a574, white);
 	width: 20rem;
 	border-radius: 999px;
-	border-color: 2px solid black;
-	font-size: 1rem;
-	font-family: var(--font-modern);
+	font-size: 1.5rem;
+	font-family: "Cormorant Garamond", serif;
+	font-weight: bold;
 	transition: transform 0.2s ease;
 }
 .LandingPage-Button:hover {
-	transform: scale(1.05);
-	box-shadow: 0 0 1rem #f5d236;
+	transform: scale(1.03);
+	box-shadow: 0 0 1rem #e6a574;
+}
+
+@media (min-width: 1900px) {
+	.LandingPage-Background {
+		z-index: -2;
+	}
+	.LandingPage-ContainerLogo {
+		z-index: -1;
+	}
+	.LandingPage-Logo {
+		position: absolute;
+	}
+	.LandingPage-SloganGlobal {
+		margin-top: 25rem;
+	}
 }

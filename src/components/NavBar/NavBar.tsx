@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEra } from "../../contextTest/ContextTest";
 import { eraIndexToCssClass } from "../../utils/eraMapping";
 import "./NavBar.css";
@@ -23,12 +23,11 @@ function NavBar() {
 
   return (
     <nav className="navBar-global">
-      <button type="button" className={`navBar-button ${eraClass}`}>
-        E
-      </button>
-      <div className="navBar-text">
+      <Link to="/" className={`navBar-button ${eraClass}`}>
         <span className={`navBar-text-A ${eraClass}`}>E</span>
-        <span className="navBar-text-B">RA</span>
+      </Link>
+      <div className="navBar-text">
+        <span className="navBar-text-B">ERA</span>
       </div>
     </nav>
   );

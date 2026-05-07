@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useEra } from "../../contextTest/ContextTest";
+import Accordion from "../../components/accordion/Accordion";
 import "./Era.css";
 
 type Period = {
@@ -9,6 +10,8 @@ type Period = {
   time_end: string;
   introduction: string;
   description: string;
+  index_name: string;
+  image?: string;
 };
 
 function Era() {
@@ -69,20 +72,41 @@ function Era() {
   if (!periods) return null;
 
   return (
-    <div className="era-container" ref={containerRef}>
-      {periods.map((period) => (
-        <section
-          key={period.id}
-          data-era-id={period.id}
-          className="section_era"
-        >
-          <p className="section-badge">{period.time_start}</p>
-          <h2 className="section_era-title">{period.name}</h2>
-          <p>{period.introduction}</p>
-          <p>{period.description}</p>
-        </section>
-      ))}
-    </div>
+    <>
+      <div className="era-container" ref={containerRef}>
+        {periods.map((period) => (
+          <section
+            key={period.id}
+            data-era-id={period.id}
+            className={`section_era ${period.index_name}-section_era`}
+          >
+            {period.image && (
+              <img
+                className={`era-img ${period.index_name}-section_era-img`}
+                src={period.image}
+                alt={period.name}
+              />
+            )}
+            <p className={`section-badge ${period.index_name}-sectionBadge`}>
+              {period.time_start}
+            </p>
+            <div className="div_era">
+              <h2
+                className={`section_era-title ${period.index_name}-section_era-title`}
+              >
+                {period.name}
+              </h2>
+              <p
+                className={`section_era-desc ${period.index_name}-section_era-desc`}
+              >
+                {period.introduction}
+              </p>
+            </div>
+          </section>
+        ))}
+      </div>
+      <Accordion />
+    </>
   );
 }
 

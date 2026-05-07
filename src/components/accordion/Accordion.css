@@ -7,6 +7,11 @@
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	flex: 1;
+}
+
+.accordion-global {
+	padding-top: 5em;
 }
 
 /* ── Texte conteneur ── */
@@ -14,16 +19,18 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 1;
-	pointer-events: none;
+	z-index: 3;
 	width: 4.5em;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+}
+
+.accordion-div-text.era1 {
 	background: linear-gradient(
 		to bottom,
-		var(--color-prehistory) 40%,
+		var(--color-before-prehistory) 40%,
 		transparent 100%
 	);
 }
@@ -31,13 +38,6 @@
 	background: linear-gradient(
 		to bottom,
 		var(--color-prehistory) 40%,
-		transparent 100%
-	);
-}
-.accordion-div-text.era1 {
-	background: linear-gradient(
-		to bottom,
-		var(--color-before-prehistory) 40%,
 		transparent 100%
 	);
 }
@@ -77,18 +77,28 @@
 	);
 }
 
-/* active — gradient horizontal par époque */
-.accordion-card.active .accordion-div-text.era2 {
-	background: linear-gradient(
-		to left,
-		var(--color-prehistory) 30%,
-		transparent 75%
-	);
+/* ── Active : conteneur barre du bas ── */
+.accordion-card.active .accordion-div-text {
+	width: 100%;
+	height: 5em;
+	bottom: 0;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 2em;
 }
+
 .accordion-card.active .accordion-div-text.era1 {
 	background: linear-gradient(
 		to left,
 		var(--color-before-prehistory) 30%,
+		transparent 75%
+	);
+}
+.accordion-card.active .accordion-div-text.era2 {
+	background: linear-gradient(
+		to left,
+		var(--color-prehistory) 30%,
 		transparent 75%
 	);
 }
@@ -127,42 +137,95 @@
 		transparent 75%
 	);
 }
-.accordion-card.active .accordion-div-text {
-	width: 100%;
-	height: 5em;
-	flex-direction: row;
-	justify-content: flex-start;
-	background: linear-gradient(
-		to left,
-		var(--color-prehistory),
-		transparent 75%
-	);
+
+/* ── Bouton Réserver ── */
+.button-era {
+	display: none;
+	transition:
+		transform 300ms ease,
+		opacity 300ms ease;
+	font-weight: bolder;
 }
 
-/* ── Texte ── */
+.accordion-card.active .button-era {
+	display: block;
+	margin: 1em;
+	padding: 0.4em 1em;
+	border-radius: 9999px;
+	border: 4px solid currentColor;
+	opacity: 0.75;
+	z-index: 3;
+	cursor: pointer;
+	white-space: nowrap;
+	font-size: 1.75em;
+}
+
+.accordion-card.active .button-era:hover {
+	transform: scale(1.1);
+	opacity: 1;
+}
+
+.button-era1 {
+	font-family: var(--font-phanerozoic);
+	color: var(--color-before-prehistory-text);
+	background-color: var(--color-before-prehistory);
+}
+.button-era2 {
+	font-family: var(--font-prehistoric);
+	color: var(--color-prehistory-text);
+	background-color: var(--color-prehistory);
+}
+.button-era3 {
+	font-family: var(--font-antiquity);
+	color: var(--color-antiquity-text);
+	background-color: var(--color-antiquity);
+}
+.button-era4 {
+	font-family: var(--font-medieval);
+	color: var(--color-middle-ages-text);
+	background-color: var(--color-middle-ages);
+}
+.button-era5 {
+	font-family: var(--font-modern);
+	color: var(--color-early-modern-text);
+	background-color: var(--color-early-modern);
+}
+.button-era6 {
+	font-family: var(--font-contemporary);
+	color: var(--color-contemporary-text);
+	background-color: var(--color-contemporary);
+}
+.button-era7 {
+	font-family: var(--font-futur);
+	color: var(--color-future-text);
+	background-color: var(--color-future);
+}
+
+/* ── Texte titre vertical ── */
 .accordion-text {
 	font-size: 2em;
 	font-weight: 100;
 	white-space: nowrap;
+	pointer-events: none;
 	display: block;
 	padding: 0.5rem 1rem;
 	transform: rotate(-90deg);
-	transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
+	transition: all 100ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .accordion-card.active .accordion-text {
 	transform: rotate(0deg);
 }
 
-/* ── Couleurs et fonts par époque ── */
+.accordion-text.era1 {
+	color: var(--color-before-prehistory-text);
+	font-family: var(--font-phanerozoic);
+	font-size: 1.75em;
+}
 .accordion-text.era2 {
 	font-size: 3em;
 	color: var(--color-prehistory-text);
 	font-family: var(--font-prehistoric);
-}
-.accordion-text.era1 {
-	color: var(--color-before-prehistory-text);
-	font-family: var(--font-phanerozoic);
 }
 .accordion-text.era3 {
 	font-size: 3em;
@@ -170,7 +233,7 @@
 	font-family: var(--font-antiquity);
 }
 .accordion-text.era4 {
-	font-size: 3em;
+	font-size: 2.7em;
 	color: var(--color-middle-ages-text);
 	font-family: var(--font-medieval);
 }
@@ -180,7 +243,7 @@
 	font-family: var(--font-modern);
 }
 .accordion-text.era6 {
-	font-size: 3em;
+	font-size: 2.5em;
 	color: var(--color-contemporary-text);
 	font-family: var(--font-contemporary);
 }
@@ -190,12 +253,12 @@
 	font-family: var(--font-futur);
 }
 
-/* ── Background bouton par époque ── */
-.accordion-btn.era2 {
-	background-color: var(--color-prehistory);
-}
+/* ── Background bouton accordion par époque ── */
 .accordion-btn.era1 {
 	background-color: var(--color-before-prehistory);
+}
+.accordion-btn.era2 {
+	background-color: var(--color-prehistory);
 }
 .accordion-btn.era3 {
 	background-color: var(--color-antiquity);
@@ -218,17 +281,18 @@
 	flex: 1 1 0;
 	overflow: hidden;
 	border-radius: 15px;
-	transition: flex 950ms cubic-bezier(0.25, 1, 0.5, 1);
+	transition: flex 1000ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .accordion-card.active {
 	flex: 45%;
 }
+
 .accordion-card.shrink {
 	flex: 0.3 1 0;
 }
 
-/* ── Bouton ── */
+/* ── Bouton accordion ── */
 .accordion-btn {
 	width: 100%;
 	height: 100%;
@@ -242,16 +306,13 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	opacity: 0.5;
+	opacity: 0.4;
 	transition: opacity 600ms ease;
 	z-index: 0;
 }
 
 .accordion-card.active .accordion-btn::after {
 	opacity: 0.6;
-}
-.accordion-card.shrink .accordion-btn::after {
-	opacity: 0.4;
 }
 
 /* ── Images ── */
@@ -260,6 +321,7 @@
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+	position: relative;
 	display: block;
 	opacity: 0.7;
 	transition:
@@ -270,6 +332,7 @@
 .accordion-card.active img {
 	opacity: 0.6;
 }
+
 .accordion-card.shrink img {
 	filter: blur(3px);
 	opacity: 0.5;
