@@ -57,12 +57,14 @@ function Era() {
 							{period.time.start}
 						</p>
 						<div className="div_era">
-							<h2 className={`${period.index_name}-section_era-title`}>
+							<h2
+								className={`era-title ${period.index_name}-section_era-title`}
+							>
 								{period.name}
 							</h2>
-							<p className={`${period.index_name}-section_era-desc`}>
+							{/* <p className={`${period.index_name}-section_era-desc`}>
 								{period.introduction}
-							</p>
+							</p> */}
 						</div>
 						<Accordion activeIndex={period.id} />
 					</section>

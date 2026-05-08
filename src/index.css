@@ -21,7 +21,7 @@
 @font-face {
 	font-family: "Contemporary";
 	src: url("assets/fonts/ArchieroBold.ttf") format("truetype");
-	size-adjust: 120%;
+	size-adjust: 100%;
 }
 @font-face {
 	font-family: "Antiquity";

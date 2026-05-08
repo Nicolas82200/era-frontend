@@ -1,17 +1,22 @@
+.accordion-global {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100vh; /* ← occupe toute la hauteur de la page */
+	overflow: hidden; /* ← évite le débordement */
+	position: absolute;
+}
+
 .accordion {
 	display: flex;
 	width: 100%;
 	max-width: 75%;
-	height: 600px;
+	height: 75vh; /* ← déjà bien, mais peut ajuster si besoin */
 	gap: 2rem;
 	list-style: none;
-	padding: 0;
+	padding: 1rem;
 	margin: 0;
 	flex: 1;
-}
-
-.accordion-global {
-	padding-top: 5em;
 }
 
 /* ── Texte conteneur ── */

@@ -21,6 +21,8 @@
 	cursor: pointer;
 	font-size: 2rem;
 	color: var(--color-neutral);
+	text-decoration: none;
+	text-align: center;
 }
 
 .navBar-text {
@@ -28,6 +30,8 @@
 	font-weight: bold;
 	letter-spacing: 0.2rem;
 	color: var(--color-neutral);
+	text-decoration: none;
+	text-align: center;
 }
 
 /* Pour les ères */
